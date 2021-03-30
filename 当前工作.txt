@@ -1,0 +1,18 @@
+已完成TDSV的训练和测试：
+首先准备好数据，数据集为VCTK。执行data_preprocess.py文件
+会生成noise_tdsv,test_tdsv,train_tdsv目录，存放各自的npy格式文件
+执行main.py文件进行训练，训练完成之后得到tdsv_model目录，存放
+日志和模型
+可根据configuration.py文件进行修改是训练还是测试；选择tdsv和
+tisv
+
+
+audio_path = r'E:\Deep-learning\dataset\VCTK\wav48_silence_trimmed'  # utterance dataset
+clean_path = r'E:\Deep-learning\dataset\VCTK\clean_testset_wav'  # clean dataset
+noisy_path = r'E:\Deep-learning\dataset\VCTK\noisy_testset_wav'  # noisy dataset
+
+
+fbank与mfcc的比较
+fbank特征更多是希望符合声音信号的本质，拟合人耳的接受特性。在
+fbank的基础上进行DCT（离散余弦变换）就得到了mfcc
+DCT是线性变换，会丢失语音信号中原本的一些高度非线性成分。
